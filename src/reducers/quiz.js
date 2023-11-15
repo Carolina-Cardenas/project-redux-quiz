@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+
 // Change these to your own questions!
 const questions = [
   {
@@ -14,20 +16,37 @@ const questions = [
       "When was Michael Phelps last named male World Swimmer of the Year?",
     options: ["2012", "2014", "2016", "2018"],
     correctAnswerIndex: 2
+  },
+  {
+    id: 3,
+    questionText:
+    "What is the best selling album of all time?",
+    options: ["Thriller- Michael Jackson",  "Back in Black - AC/DC", "The Dark Side of the Moon - Pink Floyd", "Abbey Road - The Beatles"],
+    correctAnswerIndex: 0
   }
+
 ];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizIsOngoing: true
 };
 
 export const quiz = createSlice({
   name: "quiz",
   initialState,
   reducers: {
+    
+// const dispatch = useDispatch();
+
+// const handleClick = () => {
+//   const questionId = 1;
+//   const answerIndex = 0;
+
+//   dispatch(setAnswer({ questionId, answerIndex }));
+// };
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -44,9 +63,10 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
+   
       const { questionId, answerIndex } = action.payload;
       const question = state.questions.find((q) => q.id === questionId);
-
+      
       if (!question) {
         throw new Error(
           "Could not find question! Check to make sure you are passing the question id correctly."
@@ -66,6 +86,9 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       });
+
+     console.log(JSON.stringify(state.answers, null, 2))
+    
     },
 
     /**
