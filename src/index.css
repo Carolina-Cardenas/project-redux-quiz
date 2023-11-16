@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.answer-button{                       
+background-color: rgb(255, 205, 66);
+    border: rgb(255, 205, 66);
+    width: 310px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 18px;
+    margin: 10px;
+    font-family: "Special Elite", cursive;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.next-question-container{                     
+   
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    padding: 10px;
+    font-family: "Courier Prime", monospace;
+    margin-top: 0px;
+  }
+  .score-text{
+    color: white;
+    background-image: url(/static/media/mobileBG.7d8d450….jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    overflow-x: hidden;
+}
+.container-button{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 5%;
+}
+.next-button{
+  border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    padding: 10px;
+    font-family: "Courier Prime", monospace;
+    margin-top: 0px;
+}

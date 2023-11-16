@@ -61,7 +61,7 @@ console.log(answer)
       {answer &&
        <div className="next-question-container">
       <p className="answer-text">{`The answer is ${statusAnswer()}, please go to the next question`}</p>
-    <button className="next-button" type="submit" onClick={handleNext}>NEXT</button> 
+      <button className="next-button" type="submit" onClick={handleNext}>NEXT</button> 
     </div>}
    </div>
    
