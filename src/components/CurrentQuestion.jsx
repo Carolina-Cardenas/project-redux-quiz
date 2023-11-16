@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 import { Summary } from "./Summary"; 
-
+import mando from './../assets/mando.jpg';
+import './CurrentQuestion.css';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -48,13 +49,21 @@ console.log(answer)
   }
 
   return (
-    <div>
+    <article className="detailPage">
+    <div 
+    className="background"
+    style={{
+      backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(${mando})`,
+    }}
+    >
       <h1>Question: {question.questionText}</h1>
+      <div className="container-button">
       {question.options.map((option, index) => (
-        <button key={index} onClick={() =>handleClick(index)}>
+        <button className="answer-button" key={index} onClick={() =>handleClick(index)}>
           {option}
         </button>
       ))}
+      </div>
   {/* <p>Last answer: {lastAnswer.answer}</p>
 
       <p>Is correct: {lastAnswer.isCorrect}</p> */} 
@@ -64,6 +73,6 @@ console.log(answer)
       <button className="next-button" type="submit" onClick={handleNext}>NEXT</button> 
     </div>}
    </div>
-   
+   </article>
   );
 };
