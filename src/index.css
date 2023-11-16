@@ -12,54 +12,110 @@ code {
     monospace;
 }
 body{
-  background: url("./assets/mando.jpg") ;
+  /* className="background"
+    style={{
+     backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%), url(${mando})`,
+    }} */
+  background: url("./assets/mando_640.jpg");
+  background-size:  100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 h1{
 
     color:white;
+    width: 80%;
     font-weight: bold;
-    font-size: 25px;
-    padding: 18px;
-    margin: 10px;
+    font-size: 30px;
+    padding: 15px;
+    margin:auto;
+    margin-top: auto;
     font-family: "Special Elite", cursive;
 
 }
-.answer-button{                       
-background-color: rgb(255, 205, 66);
-    border: rgb(255, 205, 66);
-    width: 310px;
+h2{
+  width: 80%;
+  color:white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  margin:auto;
+  margin-top: 0%;
+  font-family: "Special Elite", cursive;
+}
+.answer-button, .next-button{                       
+  background-color: rgba(0, 0, 0, 0.035);
+   border: black;
+    width: 200px;
     border-radius: 10px;
-    color:white;
     font-weight: bold;
-    font-size: 25px;
-    padding: 18px;
+    font-size: 20px;
+    padding: 10px;
     margin: 10px;
-    font-family: "Special Elite", cursive;
+   font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Special Elite", cursive;
+ 
+
+  
   }
-  * {
+  
+  .answer-button:hover, .next-button:hover {
+    background-color: rgba(0, 0, 0, 0.221); /* Cambia la opacidad al pasar el mouse */
+  }
+
+  .option-text {
+    font-family: "Special Elite", cursive;
+    opacity: 1; 
+    color:white;
+  }
+  .answer-text{
+    color: white;
+    font-family: "Special Elite", cursive;
+    font-size: 20px;
+  }
+  /* * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-}
+} */
 .next-question-container{                     
-   
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    padding: 10px;
-    font-family: "Courier Prime", monospace;
-    margin-top: 0px;
-  }
+    width: 80%;
+    padding: 8px;
+    font-family: "Special Elite", cursive;
+    margin-top: 40px;
+    text-align: center;
+  }.counter-container{                     
+    width: 80%;
+     padding: 8px;
+     font-family: "Special Elite", cursive;
+     margin-top: 70px;
+     text-align: center;
+   }
   .score-text{
     color: white;
-    background-image: url(/static/media/mobileBG.7d8d450….jpeg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
     background-position: center center;
     overflow-x: hidden;
+    margin-top: 300px;
+    text-align: center;
+    font-family: "Special Elite", cursive;
+    font-size: 20px;  
+   
 }
-.container-button{
+.container-button {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-around;
+}
+ /* .container-button{
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -67,7 +123,16 @@ background-color: rgb(255, 205, 66);
   -webkit-box-align: center;
   align-items: center;
   padding: 5%;
+}  */
+.summary-text{
+  text-align: center;
+  color: white;
 }
+.summary-container{
+  text-align: center;
+ 
+}
+
 @media (min-width: '768px') {
   .container-button{
   justify-content: center;
@@ -76,14 +141,7 @@ background-color: rgb(255, 205, 66);
 }
   
 }
-.next-button{
-  border-radius: 5px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    padding: 10px;
-    font-family: "Courier Prime", monospace;
-    margin-top: 0px;
-}
+
 @media (min-width: 370px) {
   .moviePage a {
       width:50%
@@ -107,3 +165,13 @@ background-color: rgb(255, 205, 66);
 }
 
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  color: #fff;
+  padding: 30px 0;
+  margin: auto auto 40px;
+}

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 import { Summary } from "./Summary"; 
-import mando from './../assets/mando.jpg';
+import mando from './../assets/mando_640.jpg';
 import './CurrentQuestion.css';
 
 export const CurrentQuestion = () => {
@@ -13,6 +13,7 @@ export const CurrentQuestion = () => {
   );
   const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
+  const questionTotal = useSelector((store) => store.quiz.questions);
 console.log(answer)
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -33,7 +34,7 @@ console.log(answer)
  
   };
 
-  // console.log(JSON.stringify(answers, null, 2))
+
   
   
   const statusAnswer = () => {
@@ -49,30 +50,29 @@ console.log(answer)
   }
 
   return (
-    <article className="detailPage">
+    <section className="main-container">
     <div 
     className="background"
-    style={{
-      backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(${mando})`,
-    }}
+    
     >
-      <h1>Question: {question.questionText}</h1>
+      <h1>Mandalorian Quiz </h1>
+      <h2> {question.questionText}</h2>
       <div className="container-button">
       {question.options.map((option, index) => (
         <button className="answer-button" key={index} onClick={() =>handleClick(index)}>
-          {option}
+         <span className="option-text">{option}</span> 
         </button>
       ))}
       </div>
-  {/* <p>Last answer: {lastAnswer.answer}</p>
-
-      <p>Is correct: {lastAnswer.isCorrect}</p> */} 
+      <div className="counter-container">
+        <p className="answer-text">Question: {question.id} / {questionTotal.length} </p  ></div>
       {answer &&
        <div className="next-question-container">
+       
       <p className="answer-text">{`The answer is ${statusAnswer()}, please go to the next question`}</p>
-      <button className="next-button" type="submit" onClick={handleNext}>NEXT</button> 
+      <button className="next-button" type="submit" onClick={handleNext}> <span className="option-text">Next</span> </button> 
     </div>}
    </div>
-   </article>
+   </section>
   );
 };

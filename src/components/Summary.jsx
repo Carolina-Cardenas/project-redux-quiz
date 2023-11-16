@@ -12,11 +12,11 @@ const restart = () => {
 }
 
       return (
-        <section className="background-container summary-container">
+        <section className=" summary-container">
           <h1 className="summary-text">Well done, you have completed our super difficult quiz!</h1>
           {/* <img className='question-img'src={mando} alt='mando'/> */}
-          <p className="scoretext">{`You've got ${correctAnswers} out of 5.`}</p>
-      <button className="next-button" type="button" onClick={restart}>RESTART</button>
+          <p className="score-text">{`You've got ${correctAnswers} out of 5.`}</p>
+      <button className="next-button" type="button" onClick={restart}>Restart</button>
      
           </section>
   )

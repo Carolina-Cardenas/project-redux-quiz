@@ -6,24 +6,41 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText: "What are Mandalorians sometimes called?",
+    options: ["Mandos", "Nandos", "Delorians ", "Starkillers"],
     correctAnswerIndex: 0
   },
   {
     id: 2,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2
+    "What is the name of character who is The Mandalorian?",
+    options: ["Mye Sharona","Din Djarin" , "Rood Barista", "Grand Admiral Jamiroquai" ],
+    correctAnswerIndex: 1
   },
   {
     id: 3,
     questionText:
-    "What is the best selling album of all time?",
-    options: ["Thriller- Michael Jackson",  "Back in Black - AC/DC", "The Dark Side of the Moon - Pink Floyd", "Abbey Road - The Beatles"],
-    correctAnswerIndex: 0
-  }
+   "How would you best describe the character of The Mandalorian? ",
+    options: ["Ship technician", "Lone gunfighter and Bounty hounter", "Scrap salvager and jedi", "Cargo pirate"],
+    correctAnswerIndex: 1
+  },
+  { 
+  id: 4,
+  questionText:
+ " How old is The Child ?",
+  options: ["10", "20", "50", "100"],
+  correctAnswerIndex: 2
+},
+{
+  id: 5,
+  questionText:
+  "What is the name of red-skinned Devaronian prisoner who mocks The Mandalorian?",
+  options: ["burg", "Bleef", "Kananga", "Bansky"],
+  correctAnswerIndex: 0
+},
+
+
+
 
 ];
 
