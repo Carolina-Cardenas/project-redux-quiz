@@ -1,12 +1,12 @@
-import React from "react";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 import { Summary } from "./Summary"; 
-import mando from './../assets/mando_640.jpg';
 import './CurrentQuestion.css';
 
 export const CurrentQuestion = () => {
+  const [buttonClicked, setButtonClicked] = useState(false);
   const dispatch = useDispatch();
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
@@ -25,13 +25,13 @@ console.log(answer)
       questionId: question.id,
       answerIndex
     }));
- 
+    setButtonClicked(true);
   };
 
   const handleNext = () => {
     dispatch(quiz.actions.goToNextQuestion(
     ));
- 
+    setButtonClicked(false);
   };
 
 
@@ -52,20 +52,21 @@ console.log(answer)
   return (
     <section className="main-container">
     <div 
-    className="background"
-    
     >
       <h1>Mandalorian Quiz </h1>
       <h2> {question.questionText}</h2>
       <div className="container-button">
       {question.options.map((option, index) => (
-        <button className="answer-button" key={index} onClick={() =>handleClick(index)}>
-         <span className="option-text">{option}</span> 
+       <button 
+       className={`answer-button ${isAnswerCorrect ? 'correct' : ''} ${!isAnswerCorrect && answer ? 'wrong' : ''}`}
+       key={index} onClick={() =>handleClick(index)} disabled={buttonClicked}>
+          <span className="option-text">{option}</span> 
         </button>
       ))}
       </div>
       <div className="counter-container">
-        <p className="answer-text">Question: {question.id} / {questionTotal.length} </p  ></div>
+       
+      <p className="answer-text">Question: {question.id} / {questionTotal.length} </p  ></div>
       {answer &&
        <div className="next-question-container">
        

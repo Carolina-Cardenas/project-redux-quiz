@@ -12,10 +12,7 @@ code {
     monospace;
 }
 body{
-  /* className="background"
-    style={{
-     backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%), url(${mando})`,
-    }} */
+  
   background: url("./assets/mando_640.jpg");
   background-size:  100% 100%;
   background-position: center;
@@ -32,6 +29,7 @@ h1{
     margin:auto;
     margin-top: auto;
     font-family: "Special Elite", cursive;
+    text-align: center;
 
 }
 h2{
@@ -45,8 +43,7 @@ h2{
   font-family: "Special Elite", cursive;
 }
 .answer-button, .next-button{                       
-  background-color: rgba(0, 0, 0, 0.035);
-   border: black;
+    opacity: 0.4;
     width: 200px;
     border-radius: 10px;
     font-weight: bold;
@@ -58,30 +55,51 @@ h2{
   padding: 10px;
   margin: 10px;
   font-family: "Special Elite", cursive;
- 
-
-  
+  transition: background-color 0.3s ease;
+  border: black;
+  }
+  .restart-button{
+    opacity:0.4 ;
+    color: black;
+    width: 200px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+   font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Special Elite", cursive;
+  transition: background-color 0.3s ease;
+  }
+  .restart-button:hover {
+    opacity: 1; 
+    background-color: rgba(220, 214, 214, 0.908);
+  }
+  .answer-button:hover, .next-button:hover {
+    opacity: 1; 
+    background-color: rgba(220, 214, 214, 0.908);
+  }
+  .correct {
+    background-color: green; 
   }
   
-  .answer-button:hover, .next-button:hover {
-    background-color: rgba(0, 0, 0, 0.221); /* Cambia la opacidad al pasar el mouse */
+  .wrong {
+    background-color: red; 
   }
 
   .option-text {
     font-family: "Special Elite", cursive;
     opacity: 1; 
-    color:white;
+    color:black;
   }
   .answer-text{
     color: white;
     font-family: "Special Elite", cursive;
     font-size: 20px;
   }
-  /* * {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-} */
 .next-question-container{                     
     width: 80%;
     padding: 8px;
@@ -107,23 +125,26 @@ h2{
     font-size: 20px;  
    
 }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Asegura que la altura del cuerpo ocupe todo el viewport */
+  margin: 0;
+}
 .container-button {
   margin-top: 20px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
-  justify-content: space-around;
-}
- /* .container-button{
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
   flex-direction: column;
-  -webkit-box-align: center;
-  align-items: center;
-  padding: 5%;
-}  */
+  flex-wrap: wrap;
+  width: 600px;
+  justify-content: space-around;
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+}
 .summary-text{
   text-align: center;
   color: white;
@@ -133,34 +154,35 @@ h2{
  
 }
 
-@media (min-width: '768px') {
+@media (min-width: 690px) {
   .container-button{
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
 }
   
 }
 
 @media (min-width: 370px) {
-  .moviePage a {
+  .quizPage a {
       width:50%
   }
 }
 
 @media (min-width: 570px) {
-  .moviePage a {
+  .quizPage a {
       width:33.33%
   }
 }
 
 @media (min-width: 820px) {
-  .moviePage a {
+  .quizPage a {
       width:25%
   }
-}
+} 
 
-.moviePage a img {
+.quizPage a img {
   width: 100%
 }
 
@@ -170,7 +192,7 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 100%;
   color: #fff;
   padding: 30px 0;
   margin: auto auto 40px;
