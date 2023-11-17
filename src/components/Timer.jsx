@@ -40,7 +40,7 @@ export const Timer = ({ onRestart }) => {
         <p>
           {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
         </p>
-        <button onClick={restartTimer}>Restart</button>
+        {/* <button onClick={restartTimer}>Restart</button> */}
       </div>
     );
   };

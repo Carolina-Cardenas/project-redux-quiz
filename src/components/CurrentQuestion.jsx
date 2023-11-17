@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 import { Summary } from "./Summary"; 
 import './CurrentQuestion.css';
-// import { Timer } from "./Timer";
+ import { Timer } from "./Timer";
 
 export const CurrentQuestion = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [restartKey, setRestartKey] = useState(0);
+  
   const dispatch = useDispatch();
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
@@ -54,11 +56,11 @@ console.log(answer)
     return <Summary />
   }
 
-  // const [restartKey, setRestartKey] = useState(0);
+  
 
-  // const handleRestart = () => {
-  //   setRestartKey((prevKey) => prevKey + 1);
-  // };
+  const handleRestart = () => {
+    setRestartKey((prevKey) => prevKey + 1);
+  };
 
   return (
     <section className="main-container">
@@ -76,7 +78,7 @@ console.log(answer)
       ))}
       </div>
       <div className="counter-container">
-       {/* <Timer key={restartKey} onRestart={handleRestart}/> */}
+       <Timer key={restartKey} onRestart={handleRestart}/>
       <p className="answer-text">Question: {question.id} / {questionTotal.length} </p  ></div>
       {answer &&
        <div className="next-question-container">
