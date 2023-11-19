@@ -63,7 +63,6 @@
 .detailPage .rating {
   color: black;
   font-weight: 500;
-  /* margin-left: 10px; */
   background: white;
   padding: 0 5px;
   text-shadow: none;
@@ -74,4 +73,3 @@
   content: url("star.svg");
   padding-right: 5px;
 }
-
